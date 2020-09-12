@@ -1,0 +1,3 @@
+[submodule "anvil-parser/anvil-parser"]
+	path = anvil-parser/anvil-parser
+	url = https://github.com/Geoige/anvil-parser

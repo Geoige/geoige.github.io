@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Item Finder</title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			font-family: monospace;
+		}
+
+		#loader {
+			display: none;
+			border: 4px solid #f3f3f3;
+			border-top: 4px solid #000;
+			border-radius: 50%;
+			width: 12px;
+			height: 12px;
+			animation: spin 1s linear infinite;
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<label for="fileInput">Select .mca file(s) from your region folder (e.g. C:\Users\Me\AppData\Roaming\.minecraft\saves\New World\region):</label>
+		<br/>
+		<input type="file" multiple id="fileInput">
+		<input type="button" value="Run" id="run">
+		<div id="loader"></div>
+	<br/>
+	<span id="error" style="color: red"></span>
+	</div>
+	<div id="results"></div>
+	<script type="text/javascript" src="pako.js"></script>
+	<script type="text/javascript" src="anvil-parser/anvilToNbt.js"></script>
+	<script type="text/javascript" src="anvil-parser/nbtParser.js"></script>
+	<script type="text/javascript" src="itemfinder.js"></script>
+</body>
+</html>
